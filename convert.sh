@@ -12,9 +12,11 @@ inputdir="$(realpath $1)"
 outputdir="$(realpath $2)"
 files="$(find "$inputdir"  -not -path '*/.*'  -name "*.jpg" )"
 #files="$(ls "inputdir/*.jpg")"
-mkdir -p /sdcard/backuptemp 
-echo backingup
-#cp -vr "$inputdir/*.jpg" /sdcard/backuptemp/
+#mkdir -p /sdcard/backuptemp 
+#mkdir -p "$outputdir"
+#rm -v "$outputdir/*"  
+#echo backingup
+#cp -vr "$inputdir/*" /sdcard/backuptemp/
 filecount=$(echo "$files" |wc -l )
 mapfile -t input  < <( echo "$files" )
 
